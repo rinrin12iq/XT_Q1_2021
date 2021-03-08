@@ -32,7 +32,7 @@ namespace Task_1_2_2
                 {
                     if (text1[i] == text2[j])
                     {
-                        builder.Append("" + text1[i] + text1[i]);
+                        builder.Append(text1[i].ToString() + text1[i].ToString());
                         IfNotMatches = false;
                         break;
                     }
