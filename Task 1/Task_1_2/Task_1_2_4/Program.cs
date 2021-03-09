@@ -28,11 +28,15 @@ namespace Task_1_2_4
             {
                 if (text[i] == '.' || text[i] == '!' || text[i] == '?')
                 {
-                    int firstLetterIndex = startIndex + text.Substring(startIndex, i - startIndex + 1)
-                        .IndexOf(text.Substring(startIndex, i - startIndex + 1).First(j => char.IsLetter(j)));
+                    if (i < text.Length - 1 && !char.IsLetter(text[i + 1]))
+                        continue;
 
-                    builder.Append(text.Substring(startIndex, i - startIndex + 1));
-                    builder[firstLetterIndex] = char.ToUpper(builder[firstLetterIndex]);
+                    int firstLetterIndex = startIndex + text.Substring(startIndex, i - startIndex + 1)
+                    .IndexOf(text.Substring(startIndex, i - startIndex + 1)                 // находим индекс первой
+                    .First(j => char.IsLetter(j)));                                         // буквы в предложении
+
+                    builder.Append(text.Substring(startIndex, i - startIndex + 1));         // сохраняем предложение
+                    builder[firstLetterIndex] = char.ToUpper(builder[firstLetterIndex]);    // заменяем букву на заглавную
                     startIndex = i + 1;
                 }
             }
