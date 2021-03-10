@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Task_1_2_4
 {
@@ -21,23 +19,28 @@ namespace Task_1_2_4
 
         public static string Validator(string text)
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder builder = new StringBuilder(text);
             int startIndex = 0;
+            int firstLetterIndex = 0;
 
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i] == '.' || text[i] == '!' || text[i] == '?')
                 {
-                    if (i < text.Length - 1 && !char.IsLetter(text[i + 1]))
+                    try
+                    {
+                        firstLetterIndex = startIndex + text.Substring(startIndex, i - startIndex + 1)
+                        .IndexOf(text.Substring(startIndex, i - startIndex + 1)                 // находим индекс первой
+                        .First(j => char.IsLetter(j)));                                         // буквы в предложении
+
+
+                        builder[firstLetterIndex] = char.ToUpper(builder[firstLetterIndex]);    // заменяем букву на заглавную
+                        startIndex = i + 1;
+                    }
+                    catch (InvalidOperationException)
+                    {
                         continue;
-
-                    int firstLetterIndex = startIndex + text.Substring(startIndex, i - startIndex + 1)
-                    .IndexOf(text.Substring(startIndex, i - startIndex + 1)                 // находим индекс первой
-                    .First(j => char.IsLetter(j)));                                         // буквы в предложении
-
-                    builder.Append(text.Substring(startIndex, i - startIndex + 1));         // сохраняем предложение
-                    builder[firstLetterIndex] = char.ToUpper(builder[firstLetterIndex]);    // заменяем букву на заглавную
-                    startIndex = i + 1;
+                    }
                 }
             }
 
