@@ -51,6 +51,7 @@
     <Compile Include="Entities\Triangle.cs" />
     <Compile Include="Entities\Disk.cs" />
     <Compile Include="Entities\Figure.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

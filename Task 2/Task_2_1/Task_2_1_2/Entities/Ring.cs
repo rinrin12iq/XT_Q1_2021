@@ -47,15 +47,6 @@ namespace Task_2_1_2
             }
         }
 
-
-        public Ring()
-        {
-            X = 0;
-            Y = 0;
-            InnerRadius = 1;
-            OuterRadius = 2;
-        }
-
         public Ring(int x, int y, int r, int R)
         {
             X = x;

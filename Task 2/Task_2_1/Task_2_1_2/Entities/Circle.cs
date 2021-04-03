@@ -23,12 +23,6 @@ namespace Task_2_1_2
             }
         }
 
-        public Circle()
-        {
-            X = Y = 0;
-            Radius = 1;
-        }
-
         public Circle(int x, int y, int radius)
         {
             Radius = radius;

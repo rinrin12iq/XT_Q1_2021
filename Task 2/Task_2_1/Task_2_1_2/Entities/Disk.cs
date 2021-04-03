@@ -8,7 +8,6 @@ namespace Task_2_1_2
 {
     public class Disk : Circle
     {
-        public Disk() : base() { }
         public Disk(int x, int y, int radius) : base(x, y, radius) { } 
 
         public double Area => Math.PI * Math.Pow(Radius, 2);
