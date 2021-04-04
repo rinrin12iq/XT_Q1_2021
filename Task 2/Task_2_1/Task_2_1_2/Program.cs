@@ -76,6 +76,12 @@ namespace Task_2_1_2
                                             {
                                                 users[currentUserIndex].UserFigures.Add(userFigure);
                                             }
+                                            else
+                                            {
+                                                index = 0;
+                                                break;
+                                            }
+
 
                                             index = 0;
 
@@ -128,9 +134,19 @@ namespace Task_2_1_2
                         }
                     case "Добавить пользователя":
                         {
+                            string userName;
+
                             Console.CursorVisible = true;
-                            Console.WriteLine("Введите имя пользователя:");
-                            users.Add(new User(Console.ReadLine()));
+                            
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Введите имя пользователя:");
+                                userName = Console.ReadLine();
+                            } while (string.IsNullOrEmpty(userName));
+                            
+
+                            users.Add(new User(userName));
 
                             index = 0;
                             Console.CursorVisible = false;
