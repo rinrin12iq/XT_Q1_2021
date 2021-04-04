@@ -4,9 +4,17 @@ namespace Task_2_1_2
 {
     public class Circle : Figure
     {
+        private int _radius;
+
+        public Circle(int x, int y, int radius)
+        {
+            Radius = radius;
+            X = x;
+            Y = y;
+        }
+
         public int X { get; set; }
         public int Y { get; set; }
-        private int _radius;
 
         public int Radius
         {
@@ -22,15 +30,6 @@ namespace Task_2_1_2
                     throw new ArgumentException("Радиус должен быть больше нуля");
             }
         }
-
-        public Circle(int x, int y, int radius)
-        {
-            Radius = radius;
-            X = x;
-            Y = y;
-        }
-
-        
 
         public double CircuitLength => 2 * Math.PI * Radius;
 

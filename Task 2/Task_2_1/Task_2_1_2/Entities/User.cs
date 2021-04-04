@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Task_2_1_2.Entities
 {
     public class User
     {
-        private string _name;
-
         public List<Figure> UserFigures = new List<Figure>();
+        private string _name;
 
         public User(string name)
         {

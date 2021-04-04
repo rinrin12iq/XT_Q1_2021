@@ -10,6 +10,15 @@ namespace Task_2_1_2
     {
         private int _a, _b, _c;
 
+        public Triangle(int a, int b, int c)
+        {
+            A = a;
+            B = b;
+            C = c;
+            if (!(A < B + C && B < A + C && C < A + B))
+                throw new ArgumentException("Сторона треугольника не может быть больше суммы двух других сторон");
+        }
+
         public int A
         {
             get
@@ -51,15 +60,6 @@ namespace Task_2_1_2
                 else
                     throw new ArgumentException("Строна треугольника должна быть больше нуля");
             }
-        }
-
-        public Triangle(int a, int b, int c)
-        {
-            A = a;
-            B = b;
-            C = c;
-            if (!(A < B + C && B < A + C && C < A + B))
-                throw new ArgumentException("Сторона треугольника не может быть больше суммы двух других сторон");
         }
 
         public int Perimeter => A + B + C;

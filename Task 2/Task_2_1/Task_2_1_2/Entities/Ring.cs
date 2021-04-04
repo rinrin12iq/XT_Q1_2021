@@ -8,10 +8,19 @@ namespace Task_2_1_2
 {
     public class Ring : Figure
     {
+        private int _innerRadius, _outerRadius;
+
+        public Ring(int x, int y, int r, int R)
+        {
+            X = x;
+            Y = y;
+            InnerRadius = r;
+            OuterRadius = R;
+        }
+
         public int X { get; set; }
         public int Y { get; set; }
 
-        private int _innerRadius, _outerRadius;
         public int InnerRadius
         {
             get
@@ -45,14 +54,6 @@ namespace Task_2_1_2
                 else
                     throw new ArgumentException("Радиус должен быть больше нуля");
             }
-        }
-
-        public Ring(int x, int y, int r, int R)
-        {
-            X = x;
-            Y = y;
-            InnerRadius = r;
-            OuterRadius = R;
         }
 
         public double Area => Math.PI * Math.Pow(OuterRadius, 2) - Math.PI * Math.Pow(InnerRadius, 2);
