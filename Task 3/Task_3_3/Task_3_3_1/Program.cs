@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task_3_3_1
 {
@@ -10,8 +7,10 @@ namespace Task_3_3_1
     {
         static void Main(string[] args)
         {
-            int[] mass1 = new int[] { 2, 3, 6, 8, 1, 4, 8, 23, 15, 33, 5, 2, 7, 15, 15, 11, 16, 16, 176, 15 };
-            mass1.MostFrequent();
+            int[] mass1 = new int[] { 3,  2, 6, 8, 1, 4, 8, 23, 15, 33, 15, 15, 11, 16, 16, 176, 15 };
+
+            Console.WriteLine(mass1.MostFrequent());
+            
         }
     }
 
@@ -42,11 +41,11 @@ namespace Task_3_3_1
             return array.Sum()/array.Length;
         }
 
-        public static void MostFrequent(this int[] array)
+        public static int MostFrequent(this int[] array)
         {
-            var a = array.GroupBy(i => i).OrderBy(i => i.Count());
-            var b = a.FirstOrDefault().Key;
-            Console.ReadKey();
+            int a = array.GroupBy(i => i).OrderBy(i => i.Count()).LastOrDefault().Key;
+
+            return a;
         }
     }
 }

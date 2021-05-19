@@ -12,12 +12,14 @@ namespace Task_3_2_1
         public DynamicArray()
         {
             Capacity = 8;
+            Length = 0;
             _myArray = new T[Capacity];
         }
 
         public DynamicArray(int capacity)
         {
             Capacity = capacity;
+            Length = 0;
             _myArray = new T[Capacity];
         }
 
@@ -29,6 +31,7 @@ namespace Task_3_2_1
             {
                 someCollectionEnumerator.MoveNext();
                 _myArray[i] = someCollectionEnumerator.Current;
+                Length++;
             }
         }
 
@@ -36,16 +39,20 @@ namespace Task_3_2_1
         {
             get
             {
-                var ArrayEnumerator = _myArray.GetEnumerator();
-                _length = 0;
-                while (ArrayEnumerator.MoveNext())
-                {
-                    if (ArrayEnumerator.Current != default)
-                    {
-                        _length += 1;
-                    }
-                }
+                //var ArrayEnumerator = _myArray.GetEnumerator();
+                //_length = 0;
+                //while (ArrayEnumerator.MoveNext())
+                //{
+                //    if (ArrayEnumerator.Current != default)
+                //    {
+                //        _length += 1;
+                //    }
+                //}
                 return _length;
+            }
+            private set
+            {
+                _length = value;
             }
         }
 
@@ -54,7 +61,7 @@ namespace Task_3_2_1
             get => _capacity;
             set
             {
-                if (_length == 0 || value >= Length)
+                if (value >= Length)
                 {
                     _capacity = value;
                 }
@@ -103,6 +110,7 @@ namespace Task_3_2_1
             }
 
             _myArray[Length] = elem;
+            Length++;
         }
 
         public bool Insert(T item, int index)
