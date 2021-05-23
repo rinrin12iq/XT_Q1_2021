@@ -1,0 +1,43 @@
+.registrationform{
+    width: 400px; 
+    background-color: rgb(83, 83, 255);
+    font-size: 130%;
+    color: white;
+}
+
+.email{
+    width: 80%;
+    margin: 20px 60px 0 20px;
+}
+
+.email input{
+    width: 100%;
+}
+
+.password{
+    display: inline-block;
+    width: 150px;
+    margin: 15px 0 0 20px;
+}
+
+.password input{
+    width: 146px;
+}
+
+.button{
+    margin: 20px 0 20px 20px;
+    background-color: burlywood;
+    border: 0;
+}
+
+.title {
+    padding: 10px 60px 5px 20px;;
+}
+
+.title h2{
+    margin: 0;
+}
+
+hr{
+    margin: 0;
+}

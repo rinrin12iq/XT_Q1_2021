@@ -1,0 +1,21 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+div{
+    margin: 15px;
+    width: 200px;
+    border: solid 4px black; 
+    background-color: rgb(236, 160, 72);
+    font-size: 125%;
+    box-shadow: 5px 5px 14px black;
+    border-radius: 15px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 5px;
+}

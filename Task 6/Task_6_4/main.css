@@ -1,0 +1,75 @@
+body 
+{
+    background: grey;
+    font: 14px ;
+}
+
+.block
+{
+    background: white;
+    overflow: hidden;
+    width: 750px;
+    box-shadow: 0 30px 45px #000000AB;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 100px; 
+}
+
+.block div
+{
+    float: left;
+    width: 33%;
+    border-left: 2px solid gray;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.block div :first-child 
+{
+     border: none; 
+}
+
+.virtual 
+{
+    width: 45px; 
+    height: 45px;
+    background: url(icon.png);
+    margin: auto;
+}
+
+.cloud 
+{
+    width: 45px; 
+    height: 45px;
+    background: url(icon.png);
+    background-position: 0 -40px;
+}
+    
+.server 
+{ 
+    width: 45px; 
+    height: 45px;
+    background: url(icon.png);
+    background-position: 0 -81px;	
+}
+
+.title
+{
+    color: orange;
+    font-size: 20px;
+}
+
+button 
+{
+    background: orange;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover
+{
+    cursor: pointer;
+}

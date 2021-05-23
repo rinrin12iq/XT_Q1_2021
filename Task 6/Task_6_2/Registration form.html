@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Registration form</title>
+    <link rel='stylesheet' href='Registration form.css'>
+</head>
+<body>
+    <div class="registrationform">
+        <div class="title">
+            <h2>Регистрация</h2>
+        </div>
+        <hr>
+        <form action method="post">
+            <div class="email">
+                E-mail:
+                <input type="email" required>
+            </div>
+            <div class="password" id="pass1">
+                Пароль:
+                <input type="password" required minlength="8">
+            </div>
+            <div class="password" id="pass2">
+                Ещё раз:
+                <input type="password" required minlength="8">
+            </div>
+
+            <input type="submit" value="Отправить" class="button">
+        </form>
+    </div>
+</body>
+</html>
