@@ -1,0 +1,14 @@
+.form{
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+    margin-top: 200px; 
+}
+
+#input,#output{
+    width: 180px;
+}
+
+.form *{
+    margin: 10px;
+}
